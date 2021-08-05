@@ -2,7 +2,6 @@ import typescript from 'rollup-plugin-typescript2'
 import pkg from './package.json'
 import { terser } from 'rollup-plugin-terser'
 import scss from 'rollup-plugin-scss';
-import image from '@rollup/plugin-image';
 
 export default {
     input: 'src/index.ts', // 入口文件
@@ -55,7 +54,6 @@ export default {
         scss({ 
             output: 'dist/index.css',
             sass: require('sass')
-        }),
-        image()
+        }), 
     ],
 }

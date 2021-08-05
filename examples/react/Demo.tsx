@@ -4,7 +4,6 @@ import "./index.css";
 
 const Demo=()=>{
  
- 
     return (
         <div style={{padding:100}}>
             <Preview>
