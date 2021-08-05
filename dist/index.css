@@ -1,0 +1,49 @@
+.parrot-preview-magnifier {
+  position: relative;
+  display: inline-block;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+.parrot-preview-magnifier img {
+  vertical-align: bottom;
+}
+.parrot-preview-magnifier-action {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.parrot-preview-magnifier-action .parrot-selected-box {
+  background-attachment: scroll;
+  background-repeat: repeat;
+  cursor: move;
+  z-index: 1;
+  background-color: transparent;
+  overflow: hidden;
+  background-position: 0 0;
+  position: absolute;
+  background-image: url(./imgs/box-dot.png);
+}
+.parrot-preview-magnifier-action .parrot-selected-box-hidden {
+  visibility: hidden;
+}
+.parrot-preview-magnifier .parrot-search-icon {
+  z-index: 100;
+  position: absolute;
+  bottom: 0;
+  line-height: 1;
+  right: 0;
+}
+.parrot-preview-magnifier .parrot-search-icon-hidden {
+  visibility: hidden;
+}
+
+.parrot-preview-box {
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  z-index: 1000;
+  overflow: hidden;
+  position: relative;
+}
+.parrot-preview-box img {
+  position: absolute;
+  left: 0;
+  top: 0;
+}

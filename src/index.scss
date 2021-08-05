@@ -1,0 +1,68 @@
+@import '@parrotjs/rc-helper-class/src/index.scss';
+
+$prefixCls:"#{$global-prefixCls}-preview-magnifier";
+
+$prefixClsSelectedbox:"#{$global-prefixCls}-selected-box";
+
+$prefixClsSearchIcon:"#{$global-prefixCls}-search-icon";
+
+$prefixClsPreviewBox:"#{$global-prefixCls}-preview-box";
+  
+.#{$prefixCls}{
+
+    position:relative;
+    display: inline-block;
+    border: 1px solid rgba(0,0,0,.05);
+
+    img{
+        vertical-align: bottom;
+    }
+
+    &-action{
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .#{$prefixClsSelectedbox}{
+            background-attachment: scroll;
+            background-repeat: repeat;
+            cursor: move;
+            z-index:1;
+            background-color: transparent;
+            overflow: hidden;
+            background-position: 0 0;
+            position: absolute;
+            background-image: url(./imgs/box-dot.png);
+    
+            &-hidden{
+                visibility: hidden;
+            }
+        }
+    } 
+
+    .#{$prefixClsSearchIcon}{
+        
+        z-index:100;
+        position: absolute;
+        bottom: 0;
+        line-height: 1;
+        right: 0;
+
+        &-hidden{
+            visibility: hidden;
+        }
+    }   
+}
+.#{$prefixClsPreviewBox}{
+    border:1px solid rgba(0,0,0,.05);
+    z-index:1000;
+    overflow:hidden;
+    position: relative;
+    
+    img{
+        position: absolute;
+        left:0;
+        top:0;
+    }
+}
