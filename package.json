@@ -1,6 +1,6 @@
 {
   "name": "@parrotjs/react-preview-magnifier",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "",
   "main": "dist/parrotreactpreviewmagnifier.cjs.js",
   "module": "dist/parrotreactpreviewmagnifier.esm.js",
