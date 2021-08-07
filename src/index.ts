@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react';
+import React, { MutableRefObject, ReactElement } from 'react';
 
 export { default } from './PreviewMagnifier';
 
@@ -41,7 +41,7 @@ export interface IPreviewBoxProps{
     visible:boolean;
     size:number;
     offsetLeft:number;//向左偏移量
-    imgUrl?:string;//图片的url
+    imgRef?:MutableRefObject<HTMLImageElement>;//Dom对象-img
     selectBoxSize?:number;//选择盒子的大小
     shrinkProportion?:number;////选择盒子占图片大小比例
     previewBoxSize:number;//预览盒子与原图大小比例

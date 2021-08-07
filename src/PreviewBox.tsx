@@ -11,7 +11,7 @@ const PreviewBox=React.forwardRef((props:IPreviewBoxProps,ref)=>{
         target, 
         size,
         offsetLeft,
-        imgUrl, 
+        imgRef,
         shrinkProportion,
         previewBoxSize,
         position,
@@ -60,7 +60,7 @@ const PreviewBox=React.forwardRef((props:IPreviewBoxProps,ref)=>{
                 ref={(ref as any)}
                 style={styles} 
             >
-                {imgUrl?<img src={imgUrl} style={imgStyles}/>:null}
+                {imgRef?<img src={imgRef.current?.src} style={imgStyles}/>:null}
             </div>
         </Popper>
     )

@@ -26,8 +26,6 @@ const PreviewMagnifier = React.forwardRef((props: IPreviewMagnifierProps, ref) =
     const wrapperRef = useRef(null);
     //图片的size
     const [imgSize, setImgSize] = useState(0);
-    //图片的url
-    const [imgUrl,setImgUrl]=useState();
     //图片的节点
     const imgRef = useRef<any>(null);
     //预览图片的节点
@@ -43,7 +41,6 @@ const PreviewMagnifier = React.forwardRef((props: IPreviewMagnifierProps, ref) =
 
     useEffect(() => {
         const { width, height } = getBoundingClientRect(imgRef.current)
-        setImgUrl(imgRef?.current?.src); 
         setImgSize(Math.max(width, height))
     }, []);
 
@@ -103,7 +100,7 @@ const PreviewMagnifier = React.forwardRef((props: IPreviewMagnifierProps, ref) =
                 selectBoxSize={selectBoxSize}
                 previewBoxSize={previewBoxSize}
                 shrinkProportion={shrinkProportion}
-                imgUrl={imgUrl}
+                imgRef={imgRef}
                 position={position}
             />
 
