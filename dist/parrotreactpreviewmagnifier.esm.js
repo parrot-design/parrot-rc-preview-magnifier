@@ -129,14 +129,13 @@ const PreviewBox = React.forwardRef((props, ref) => {
 
 const initRect = { width: 0, height: 0, left: 0, top: 0, bottom: 0, right: 0 };
 const PreviewMagnifier = React.forwardRef((props, ref) => {
+    var _a;
     const { prefixCls: customizePrefixCls = 'parrot', componentName = 'preview-magnifier', children, offsetLeft = 10, shrinkProportion = 0.5, previewBoxSize = 1 } = props;
     const prefixCls = customizePrefixCls + '-' + componentName;
     //当前最外层节点
     const wrapperRef = useRef(null);
     //图片的size
     const [imgSize, setImgSize] = useState(0);
-    //图片的url
-    const [imgUrl, setImgUrl] = useState();
     //图片的节点
     const imgRef = useRef(null);
     //预览图片的节点
@@ -150,9 +149,7 @@ const PreviewMagnifier = React.forwardRef((props, ref) => {
     //选择盒子大小变化的回调
     const selectedBoxSizeCallback = useCallback((size) => { setSelectBoxSize(size); }, []);
     useEffect(() => {
-        var _a;
         const { width, height } = getBoundingClientRect(imgRef.current);
-        setImgUrl((_a = imgRef === null || imgRef === void 0 ? void 0 : imgRef.current) === null || _a === void 0 ? void 0 : _a.src);
         setImgSize(Math.max(width, height));
     }, []);
     const { position, start, move, reset } = useMove(imgRef.current ? getBoundingClientRect(imgRef.current) : initRect, selectBoxRef.current ? Object.assign(Object.assign({}, getBoundingClientRect(selectBoxRef.current)), { width: selectBoxSize }) : initRect);
@@ -178,7 +175,7 @@ const PreviewMagnifier = React.forwardRef((props, ref) => {
             }),
             React.createElement(SelectedBox, { visible: pointerIn, parentSize: imgSize, prefixCls: customizePrefixCls, position: position, shrinkProportion: shrinkProportion, sizeCallback: selectedBoxSizeCallback, ref: selectBoxRef })),
         React.createElement(SearchIcon, { visible: !pointerIn }),
-        React.createElement(PreviewBox, { ref: previewRef, target: wrapperRef.current, offsetLeft: offsetLeft, visible: pointerIn, size: imgSize, selectBoxSize: selectBoxSize, previewBoxSize: previewBoxSize, shrinkProportion: shrinkProportion, imgUrl: imgUrl, position: position })));
+        React.createElement(PreviewBox, { ref: previewRef, target: wrapperRef.current, offsetLeft: offsetLeft, visible: pointerIn, size: imgSize, selectBoxSize: selectBoxSize, previewBoxSize: previewBoxSize, shrinkProportion: shrinkProportion, imgUrl: (_a = imgRef === null || imgRef === void 0 ? void 0 : imgRef.current) === null || _a === void 0 ? void 0 : _a.src, position: position })));
 });
 
 export default PreviewMagnifier;

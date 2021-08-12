@@ -1,3 +1,6 @@
+---
+theme: condensed-night-purple
+---
 # 一、基于React+Hooks实现的一个仿天猫的购物放大镜组件
 
 >之前在项目中有遇到实现购物车放大镜的功能，当时比较着急，没有考虑复用性等。最近项目比较闲，所以就写了这样的一个组件。
@@ -23,6 +26,9 @@ import "@parrotjs/react-preview-magnifier/dist/index.css"
 ```
 
 # 三、使用注意事项
+   
+```js
+```
 
 ## 1.需要将img标签作为子元素传入
 
@@ -31,6 +37,9 @@ import "@parrotjs/react-preview-magnifier/dist/index.css"
 ```
 
 # 四、开放的API
+
+```js
+```
 
 ## 1.offsetLeft
 
@@ -51,7 +60,9 @@ import "@parrotjs/react-preview-magnifier/dist/index.css"
 ```
 
 ## 4.小伙伴可以提出需求 我会开放更多api
-
+       
+```js
+```
 
 # 五、未来插件
 
@@ -62,11 +73,15 @@ import "@parrotjs/react-preview-magnifier/dist/index.css"
 2.....
 ```
 
-# 6、预览地址
+# 六、预览地址
 
 [codesandbox预览地址](https://codesandbox.io/s/competent-bardeen-pe62y?file=/src/App.tsx:0-562)
 
-# 7、github地址
+
+![测试.jpg](https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/34e43e1b1b99448d81966870e27e5c3d~tplv-k3u1fbpfcp-watermark.image)
+
+
+# 七、github地址
 
 [github地址](https://github.com/parrot-design/parrot-rc-preview-magnifier)
 
